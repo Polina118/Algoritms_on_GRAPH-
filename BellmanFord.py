@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from sys import maxsize
 
 def BellmanFord(graph, V, E, src):
-	dis = [maxsize] * V # l
+	dis = [maxsize] * V
 	dis[src] = 0
 
 	for i in range(V - 1):

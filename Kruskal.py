@@ -108,7 +108,6 @@ if test_svaz(g.graph):
     plt.show()
 
     # Function call
-
     T = g.KruskalMST()
 
     graph_t = nx.Graph()

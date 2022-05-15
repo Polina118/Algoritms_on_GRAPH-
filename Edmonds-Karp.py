@@ -8,13 +8,9 @@ def max_flow(C, s, t):
     n = len(C)
     F = [[0] * n for i in range(n)]
     path = bfs(C, F, s, t)
-    j = 0
 
     while path is not None:
-        print('iteration', j)
         flow = min(C[u][v] - F[u][v] for u, v in path)
-        print(flow)
-        j = j + 1
         for u, v in path:
             F[u][v] += flow
             F[v][u] -= flow
@@ -62,9 +58,7 @@ def bfs(C, F, s, t):
                 queue.append(v)
     return None
 
-
 # capacity graph
-# node
 ###############################################
 # print('введите количество вершин: ')
 # v = int(input())
@@ -91,12 +85,6 @@ def bfs(C, F, s, t):
 
 ###############################################
 
-# C = [[0, 5, 0, 1, 0],  # 0
-#      [0, 0, 1, 2, 1],  # 1
-#      [0, 1, 0, 0, 1],  # 2
-#      [0, 0, 4, 0, 3],  # 3
-#      [0, 0, 0, 0, 0]]  # 4
-
 # M = [[0, 3, 0, 3, 0, 0, 0],  # 0
 #      [0, 0, 4, 0, 0, 0, 0],  # 1
 #      [3, 0, 0, 1, 2, 0, 0],  # 2
@@ -111,11 +99,6 @@ M = inc_to_matrix(M, 0)
 
 source = 0
 sink = 6
-
-# print('введите исток: ')
-# source = int(input())
-# print('введите сток: ')
-# sink = int(input())
 
 graph = nx.DiGraph()
 
